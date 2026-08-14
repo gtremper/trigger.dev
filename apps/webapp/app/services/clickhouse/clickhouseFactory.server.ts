@@ -37,11 +37,6 @@ const defaultLogsClickhouseClient = singleton(
   initializeLogsClickhouseClient
 );
 
-const logsSearchProjectorClickhouseClient = singleton(
-  "logsSearchProjectorClickhouseClient",
-  initializeLogsSearchProjectorClickhouseClient
-);
-
 function initializeLogsSearchProjectorClickhouseClient() {
   if (!env.LOGS_SEARCH_PROJECTOR_CLICKHOUSE_URL) {
     throw new Error("LOGS_SEARCH_PROJECTOR_CLICKHOUSE_URL is not set");
@@ -681,7 +676,10 @@ export function getDefaultLogsClickhouseClient(): ClickHouse {
 }
 
 export function getLogsSearchProjectorClickhouseClient(): ClickHouse {
-  return logsSearchProjectorClickhouseClient;
+  return singleton(
+    "logsSearchProjectorClickhouseClient",
+    initializeLogsSearchProjectorClickhouseClient
+  );
 }
 
 /** Queue-metrics client for callers with no organization in scope (the ingestion consumer). */
