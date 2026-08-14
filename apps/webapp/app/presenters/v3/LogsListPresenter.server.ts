@@ -250,7 +250,7 @@ export class LogsListPresenter extends BasePresenter {
     const rawSearchTerm = search?.trim() ?? "";
     const normalizedSearchTerm = usesV2Search
       ? normalizeLogsSearchTerm(rawSearchTerm)
-      : rawSearchTerm.toLocaleLowerCase();
+      : rawSearchTerm.toLowerCase();
     if (rawSearchTerm !== "" && !hasMinimumLogsSearchLength(normalizedSearchTerm)) {
       throw new ServiceValidationError(
         `Log searches must be at least ${MIN_LOGS_SEARCH_LENGTH} characters.`
