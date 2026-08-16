@@ -1,5 +1,13 @@
 # @trigger.dev/sdk
 
+## 4.5.12
+
+### Patch Changes
+
+- Define stable execution windows on declarative scheduled tasks. Schedule API responses now expose both the nominal CRON time and its assigned time, while the dashboard shows configured windows and upcoming assignments. ([#4572](https://github.com/triggerdotdev/trigger.dev/pull/4572))
+- Updated dependencies:
+  - `@trigger.dev/core@4.5.12`
+
 ## 4.5.11
 
 ### Patch Changes

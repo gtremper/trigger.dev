@@ -1,5 +1,15 @@
 # trigger.dev
 
+## 4.5.12
+
+### Patch Changes
+
+- Deployment builds now use custom base layer images and no longer install system packages during every build. This improves layer caching resulting in both faster deployments and faster image pulls on the worker cluster side. ([#4602](https://github.com/triggerdotdev/trigger.dev/pull/4602))
+- Updated dependencies:
+  - `@trigger.dev/core@4.5.12`
+  - `@trigger.dev/build@4.5.12`
+  - `@trigger.dev/schema-to-json@4.5.12`
+
 ## 4.5.11
 
 ### Patch Changes

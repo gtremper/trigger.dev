@@ -1,5 +1,12 @@
 # internal-platform
 
+## 4.5.12
+
+### Patch Changes
+
+- Task metrics no longer go missing for projects that configure their own `metricExporters` or `metricReaders`, and the flush error that came with it is gone. ([#4613](https://github.com/triggerdotdev/trigger.dev/pull/4613))
+- Define stable execution windows on declarative scheduled tasks. Schedule API responses now expose both the nominal CRON time and its assigned time, while the dashboard shows configured windows and upcoming assignments. ([#4572](https://github.com/triggerdotdev/trigger.dev/pull/4572))
+
 ## 4.5.11
 
 ### Patch Changes
